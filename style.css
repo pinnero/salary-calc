@@ -1,100 +1,173 @@
+/* פונטים מותאמים אישית (אופציונלי, דרך Google Fonts) */
+/* אם לא רוצים אותם, אפשר למחוק את השורה הזו */
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&family=Assistant:wght@400;700&display=swap');
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f0f2f5;
+    font-family: 'Assistant', sans-serif; /* פונט עברי מודרני */
+    background: url('beba-background.jpg') no-repeat center center fixed; /* התמונה כרקע */
+    background-size: cover; /* מכסה את כל המסך */
+    background-color: #fce4ec; /* צבע רקע חלופי אם התמונה לא נטענת / שקופה */
     color: #333;
     margin: 0;
     padding: 0;
-    text-align: right; /* עברית מימין לשמאל */
+    text-align: right;
     direction: rtl;
+    min-height: 100vh; /* ודא שהרקע מכסה את כל הגובה */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* מרכז את התוכן אנכית */
+    align-items: center; /* מרכז את התוכן אופקית */
+    overflow-y: auto; /* מאפשר גלילה אם התוכן ארוך */
 }
 
+/* שכבת שקיפות לבנה מעל רקע התמונה כדי שהטקסט יהיה קריא */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.85); /* 85% שקיפות */
+    z-index: -1; /* שומר על התוכן מעל השכבה */
+}
+
+
 header {
-    background-color: #4CAF50;
+    background-color: #ff4081; /* ורוד בוהק */
     color: white;
-    padding: 20px 0;
+    padding: 15px 0;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 100%; /* ודא שהכותרת תופסת את כל הרוחב */
+    position: fixed; /* מקבע את הכותרת למעלה */
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
 
 h1 {
     margin: 0;
-    font-size: 1.5em;
+    font-size: 1.8em; /* גודל כותרת גדול יותר */
+    font-family: 'Varela Round', sans-serif; /* פונט עגול יותר לכותרת */
+    letter-spacing: 1px;
 }
 
 main {
-    padding: 20px;
-    max-width: 400px;
-    margin: 20px auto;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    max-width: 380px; /* צמצום קל לרוחב לאסתטיקה מובייל */
+    margin: 80px auto 20px auto; /* מרווח מהכותרת המקובעת */
+    background: rgba(255, 255, 255, 0.95); /* רקע מעט שקוף ל-main */
+    border-radius: 20px; /* פינות עגולות יותר */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* צל עמוק יותר */
+    animation: fadeIn 0.8s ease-out; /* אנימציית כניסה */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* מרווח גדול יותר בין קבוצות קלט */
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
+    margin-bottom: 8px;
+    font-weight: 700; /* פונט עבה יותר */
+    color: #4a4a4a; /* צבע טקסט כהה יותר */
+    font-size: 1.05em;
 }
 
 input[type="number"] {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    padding: 12px 15px; /* ריפוד גדול יותר */
+    border: 1px solid #e0e0e0;
+    border-radius: 10px; /* פינות עגולות יותר */
     box-sizing: border-box;
-    font-size: 1em;
+    font-size: 1.1em;
     text-align: right;
+    background-color: #f9f9f9; /* רקע קלט בהיר */
+    transition: all 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #ff4081; /* צבע בורדר בוורוד בפוקוס */
+    box-shadow: 0 0 8px rgba(255, 64, 129, 0.2);
+    outline: none;
 }
 
 .note {
-    font-size: 0.8em;
-    color: #999;
-    margin-top: 5px;
+    font-size: 0.85em;
+    color: #888;
+    margin-top: 8px;
+    padding-right: 5px;
 }
 
 button {
     width: 100%;
-    padding: 12px;
-    background-color: #4CAF50;
+    padding: 15px; /* ריפוד גדול יותר לכפתור */
+    background-color: #ff4081; /* ורוד בוהק */
     color: white;
     border: none;
-    border-radius: 6px;
-    font-size: 1.1em;
+    border-radius: 10px; /* פינות עגולות יותר */
+    font-size: 1.2em; /* טקסט כפתור גדול יותר */
+    font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(255, 64, 129, 0.3); /* צל לכפתור */
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #e0005a; /* ורוד כהה יותר במעבר עכבר */
+    transform: translateY(-2px); /* אפקט קפיצה קל */
+}
+
+button:active {
+    transform: translateY(0); /* חזרה למצב רגיל בלחיצה */
 }
 
 .results-section {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px dashed #e0e0e0; /* קו הפרדה מקווקו */
 }
 
 .results-section h2 {
-    color: #4CAF50;
-    font-size: 1.2em;
-    margin-bottom: 10px;
+    color: #ff4081; /* ורוד לכותרת תוצאות */
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    text-align: center; /* מרכז את הכותרת */
+    font-family: 'Varela Round', sans-serif;
 }
 
 #resultOutput p {
-    background-color: #e8f5e9;
-    padding: 15px;
-    border-radius: 6px;
-    font-size: 1.1em;
-    font-weight: bold;
-    line-height: 1.5;
+    background-color: #fff0f5; /* רקע ורוד בהיר לתוצאות */
+    padding: 18px;
+    border-radius: 12px;
+    font-size: 1.15em;
+    font-weight: normal;
+    line-height: 1.6;
+    color: #333;
+    border: 1px solid #ffd1e3;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+#resultOutput p strong {
+    color: #c2185b; /* צבע חזק יותר לטקסט מודגש בתוצאות */
+}
+
+#resultOutput hr {
+    border: none;
+    border-top: 1px dotted #ffd1e3;
+    margin: 15px 0;
 }
 
 .final-pay {
-    color: #007bff;
-    font-size: 1.3em;
+    color: #007bff; /* צבע כחול חזק למשכורת הסופית */
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center; /* מרכז את סכום המשכורת הסופי */
+    margin-top: 15px;
 }
