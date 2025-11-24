@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>מחשבון שכר מכירות</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>💸 מחשבון שכר OTE</h1>
+    </header>
+
+    <main>
+        <div class="input-group">
+            <label for="baseSalary">שכר בסיס חודשי:</label>
+            <input type="number" id="baseSalary" value="18000" readonly>
+            <p class="note">(65% מה-OTE)</p>
+        </div>
+
+        <div class="input-group">
+            <label for="quota">יעד מכירות (Quota) לחודש:</label>
+            <input type="number" id="quota" placeholder="הכנס Quota חודשי" required>
+        </div>
+
+        <div class="input-group">
+            <label for="actualSales">מכירות שבוצעו בפועל:</label>
+            <input type="number" id="actualSales" placeholder="הכנס מכירות שבוצעו" required>
+        </div>
+
+        <button onclick="calculateSalary()">חשב משכורת</button>
+
+        <section id="results" class="results-section">
+            <h2>סיכום משכורת</h2>
+            <div id="resultOutput">
+                <p>הכנס נתונים כדי לחשב...</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
