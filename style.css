@@ -28,7 +28,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.85); /* 85% שקיפות */
+    background-color: rgba(255, 255, 255, 0.3); /* 85% שקיפות */
     z-index: -1; /* שומר על התוכן מעל השכבה */
 }
 
@@ -57,7 +57,7 @@ main {
     padding: 25px;
     max-width: 380px; /* צמצום קל לרוחב לאסתטיקה מובייל */
     margin: 80px auto 20px auto; /* מרווח מהכותרת המקובעת */
-    background: rgba(255, 255, 255, 0.95); /* רקע מעט שקוף ל-main */
+    background: rgba(255, 255, 255, 0.5); /* רקע מעט שקוף ל-main */
     border-radius: 20px; /* פינות עגולות יותר */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* צל עמוק יותר */
     animation: fadeIn 0.8s ease-out; /* אנימציית כניסה */
