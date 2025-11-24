@@ -80,6 +80,6 @@ function calculateSalary() {
         <p><strong>עמלה בפועל (35% Adjusted):</strong> ${formatter.format(actualCommission)}</p>
         <p><strong>שכר בסיס (65%):</strong> ${formatter.format(BASE_SALARY)}</p>
         <hr>
-        <p class="final-pay"><strong>סך משכורת ברוטו משוערת:</strong> ${formatter.format(totalPay)}</p>
+        <p class="final-pay"><strong>החודש את מרוויחה בסך הכל: </strong> ${formatter.format(totalPay)} !!!בשביל לקנות לי דברים</p>
     `;
 }
